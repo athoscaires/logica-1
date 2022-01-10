@@ -1,0 +1,56 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function sorteia(n) {
+
+        return Math.round(Math.random() * n);
+    }    
+
+    var numeroPensado = sorteia(10);
+    console.log(numeroPensado);
+    
+
+    var chute = parseInt(prompt("Pensei num número de 0 a 10. Qual você acha que é? Você tem 3 tentativas."));
+
+    var tentativas = 2;
+
+    while(chute != numeroPensado && tentativas > 0) {
+
+        if(isNaN(chute)) {
+                chute = parseInt(prompt("Entre com um número. Você tem mais " + tentativas + " tentativas."));
+        }
+        
+        if(chute > numeroPensado) {
+
+            chute = parseInt(prompt("Você errou! Seu chute é maior que o número pensado! Tente novamente. Você tem mais " + tentativas + " tentativas."));
+
+        } 
+        if(chute < numeroPensado) {
+
+            chute = parseInt(prompt("Você errou! Seu chute é menor que o número pensado! Tente novamente. Você tem mais " + tentativas + " tentativas."));
+        }
+        tentativas--;
+    } 
+
+    if(chute == numeroPensado) {
+
+        mostra("Uau! Você acertou, pois eu pensei no " + numeroPensado + ".");
+
+    } else {
+
+        mostra("Que pena, você errou! Eu pensei no número " + numeroPensado + ".");
+    }
+
+</script>

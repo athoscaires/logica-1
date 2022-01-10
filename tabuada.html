@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+
+var entradaNumero = parseInt(prompt("Entre com um número."))
+
+for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+
+    mostra(entradaNumero + " x " + multiplicador + " = " + entradaNumero * multiplicador);
+
+}
+
+mostra("FIM");
+
+</script>
